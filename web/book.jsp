@@ -42,7 +42,7 @@
 <body>
     <div class="container">
         <h2>School Trip Registration Form</h2>
-        <form action="submit.jsp" method="post">
+        <form action="saveTrip" method="post">
             <label for="department">Department Name:</label>
             <input type="text" id="department" name="department" required>
             
