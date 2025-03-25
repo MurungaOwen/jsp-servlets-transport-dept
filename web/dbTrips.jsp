@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
-<%@ page import="types" %>
-<%@ page import="dao.TripDAO" %>
+<%@ page import="types.Trip" %>
+<%@ page import=".TripDAO" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>

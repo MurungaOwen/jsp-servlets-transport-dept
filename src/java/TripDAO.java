@@ -1,7 +1,11 @@
+package dao;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import db.DatabaseConnection;
+import types.Trip;
+import java.time.LocalDateTime;
 
 public class TripDAO {
     private static Connection con;
@@ -33,17 +37,20 @@ public class TripDAO {
         List<Trip> trips = new ArrayList<>();
         String sql = "SELECT * FROM trips";
         try (Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
-            while (rs.next()) {
-                trips.add(new Trip(
-                    rs.getInt("id"),
-                    rs.getString("department"),
-                    rs.getString("destination"),
-                    rs.getInt("days"),
-                    rs.getString("description"),
-                    rs.getString("special_request"),
-                    rs.getInt("total_student")
-                ));
-            }
+                    while (rs.next()) {
+            LocalDateTime createdAt = rs.getTimestamp("created_at").toLocalDateTime(); // Convert Timestamp to LocalDateTime
+
+            trips.add(new Trip(
+                rs.getInt("id"),
+                rs.getString("department"),
+                rs.getString("destination"),
+                rs.getInt("days"),
+                rs.getString("description"),
+                rs.getString("special_request"),
+                rs.getInt("total_student"),
+                createdAt // Pass the converted LocalDateTime
+            ));
+        }
         }
         return trips;
     }
