@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class DatabaseConnection {
     private static final String URL = "jdbc:mysql://localhost:3306/trips_manage";
     private static final String USER = "root";
-    private static final String PASSWORD = "iamhood";
+    private static final String PASSWORD = "iamhood"; //set your password
 
     public static Connection getConnection() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
