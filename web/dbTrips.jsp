@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="types.Trip" %>
-<%@ page import=".TripDAO" %>
+<%@ page import="dao.Trips" %>
 <%@ page import="java.sql.SQLException" %>
 <%@ page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -42,7 +42,7 @@
             <tbody>
                 <%
                     try {
-                        List<Trip> trips = TripDAO.getAllTrips();
+                        List<Trip> trips = Trips.getAllTrips();
                         for (Trip trip : trips) {
                 %>
                 <tr>
