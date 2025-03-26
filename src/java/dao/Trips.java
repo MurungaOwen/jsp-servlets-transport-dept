@@ -48,7 +48,7 @@ public class Trips {
                 rs.getString("description"),
                 rs.getString("special_request"),
                 rs.getInt("total_students"),
-                createdAt // Pass the converted LocalDateTime
+                createdAt 
             ));
         }
         }
