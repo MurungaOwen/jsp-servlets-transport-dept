@@ -1,8 +1,10 @@
 package types;
 
 import java.time.LocalDateTime;
+import java.io.Serializable;
 
-public class Trip {
+public class Trip implements Serializable {
+    
     private int id;
     private String department;
     private String destination;
@@ -11,6 +13,9 @@ public class Trip {
     private String specialRequest;
     private int totalStudent;
     private LocalDateTime createdAt;
+
+    // Default Constructor
+    public Trip() {}
 
     // Constructor with ID (for fetching from DB)
     public Trip(int id, String department, String destination, int days, String description, String specialRequest, int totalStudent, LocalDateTime createdAt) {
